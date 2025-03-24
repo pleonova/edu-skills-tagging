@@ -8,7 +8,7 @@ This application analyzes educational text passages to identify optimal interven
 
 ## Sample Output
 
-![User Interface Mock](diagrams/user_interface_mock.jpg)
+![User Interface Mock](diagrams/ui_mock.jpg)
 
 ---
 
