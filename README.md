@@ -6,7 +6,7 @@ This application analyzes educational text passages to identify optimal interven
 
 ---
 
-## User Interface
+## Sample Output
 
 ![User Interface Mock](diagrams/user_interface_mock.jpg)
 
@@ -55,7 +55,7 @@ The system pinpoints passages that:
 
 - Python-based processing pipeline
 - Structured prompt engineering - JSON Output
-- LLM output stored and analyzed using **DataFrames**
+- LLM output stored and analyzed using DataFrames
 - Embedding-based dataset joins to reduce hallucinations
 - Final output: Excel reports for easy review & collaboration
 
@@ -112,6 +112,7 @@ Output: **combined_data_final.xlsx**
 
 - [ ] Improve LLM output validation and error handling  
 - [ ] Implement a scalable **LLM-as-a-Judge** system for reviews  
+- [ ] Add another prompt for skills assessment
 - [ ] Add dynamic **text highlighting** based on skill strength  
 - [ ] Integrate **student engagement metrics** for optimization  
 - [ ] Visualize and track **skill dependencies** across stories  
