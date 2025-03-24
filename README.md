@@ -1,77 +1,117 @@
-# Educational Intervention Skill Tagging
+# 📚 Educational Intervention Skill Tagging
 
-## Overview
-This app analyzes educational text passages to identify optimal learning intervention points by mapping text content to specific educational skills and competencies. The system employs Large Language Models (LLMs) to perform intelligent skill mapping and rating.
+## 🚀 Overview
 
-## User Interface
+This application analyzes educational text passages to identify optimal intervention points by mapping content to specific academic skills. It uses large language models (LLMs) to intelligently detect, rate, and explain skill alignment—helping educators personalize instruction and improve learning outcomes.
+
+---
+
+## 🖼️ User Interface
+
 ![User Interface Mock](diagrams/user_interface_mock.jpg)
 
-## System Design and Methodology
+---
 
-### Key Design Choices
+## 🧠 System Design & Methodology
 
-#### 1. Skill-Based Analysis Framework
-- Implemented a comprehensive skills taxonomy covering 69 distinct educational competencies
-- Skills span multiple domains including:
-  - Science (e.g., plant/animal life, physics, earth science)
-  - Social Studies (e.g., community roles, history, geography)
-  - Language Arts
-  - Mathematics
-  - Arts and Physical Education
-  - Digital Literacy
+### 🧩 1. Skill-Based Analysis Framework
 
-#### 2. AI-Powered Assessment
-- Utilizes the Groq LLM API with the llama3-70b-8192 model
-- Structured JSON output format for consistent analysis
-- Low temperature setting (0.01) to ensure consistent, deterministic responses
-- Response includes:
-  - Skill identification
-  - Alignment rating (0-10 scale)
-  - Detailed pedagogical explanation
-  - Relevant text excerpt mapping
+- Uses a comprehensive taxonomy of **69 educational competencies**
+- Skills span a wide range of domains:
+  - **Science** (e.g., life sciences, physics, earth science)
+  - **Social Studies** (e.g., history, geography, civics)
+  - **Language Arts**
+  - **Mathematics**
+  - **Arts & Physical Education**
+  - **Digital Literacy**
 
-#### 3. Intervention Point Detection
-The system determines suitable learning intervention moments by:
-- Identifying text segments that strongly align with specific skills (ratings 9-10)
-- Capturing partial skill alignment opportunities (ratings 5-6)
-- Providing context for why certain passages are pedagogically meaningful
-- Mapping multiple skills to the same text segment where appropriate
+---
 
-### Technical Implementation
+### 🤖 2. AI-Powered Skill Assessment
+
+- Powered by **Groq LLM API (llama3-70b-8192)**
+- Uses structured prompt templates to ensure consistency
+- **Low temperature (0.01)** for deterministic, repeatable outputs
+
+Each model response includes:
+- Identified **skill tag(s)**
+- **Alignment rating** (scale of 0–10)
+- Pedagogical **explanation**
+- Highlighted **text excerpt** supporting the alignment
+
+---
+
+### 🎯 3. Intervention Point Detection
+
+The system pinpoints passages that:
+- **Strongly align** with specific skills (ratings: 9–10)
+- Show **partial alignment** or emerging understanding (ratings: 5–6)
+- Offer opportunities for teacher-led **discussion or review**
+- **Map multiple skills** to the same passage when relevant
+
+---
+
+## 🛠️ Technical Implementation
+
 - Python-based processing pipeline
-- Structured prompt engineering for consistent LLM responses
-- DataFrame-based results storage for analysis
-- Joining to datasets using embeddings to remove any hallucinations
-- Excel report generation for easy review and sharing
+- Structured prompt engineering
+- LLM output stored and analyzed using **DataFrames**
+- Embedding-based dataset joins to reduce hallucinations
+- Final output: Excel reports for easy review & collaboration
 
-### Instructions for how to run the code
-- Make sure that you have sign up for groq and gotten a free API key 
-- Create a virtual environment using the requirements.txt
-- run file run_01_process_stories.py
-- run file run_02_combine_data.py to get the final AI output file `combined_data_final.xlsx'
+### ▶️ How to Run
 
+1. Sign up at [Groq](https://groq.com) and obtain a free API key.
+2. Set up the virtual environment:
 
-### Human Review Integration & Quality Control
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-#### Feedback-Informed Few-Shot Learning
-We would construct a reference dataset containing examples with human feedback. This dataset would be used for few-shot prompting to guide the AI toward more aligned outputs.
+3. Run the story processing script:
 
-#### Evaluation with Human Ratings
-A randomized subset of outputs would be selected as a test set. Multiple reviewers would rate these outputs based on their agreement with the AI's decisions. These ratings would be used to benchmark model performance across various prompt strategies.
+   ```bash
+   python run_01_process_stories.py
+   ```
 
-#### Prompt Optimization and Edge Case Analysis
-By comparing AI outputs to human ratings, we would iterate on prompt engineering to increase alignment. Edge cases where the AI underperforms would be flagged for deeper discussion, potentially revealing categories of tasks or skills that are inherently more difficult for the model.
+4. Generate the final AI output:
 
-#### LLM-as-a-Judge for Scalable Evaluation
-To reduce human review burden in the long term, we would train or fine-tune an LLM-as-a-judge model using the labeled dataset. This model would act as a proxy evaluator for future iterations.
+   ```bash
+   python run_02_combine_data.py
+   ```
 
-#### Lightweight A/B Testing
-In scenarios with limited review capacity, A/B testing serves as an effective low-touch evaluation method. For example, by comparing cohorts receiving different AI-generated interventions, we can assess performance and engagement outcomes to infer alignment and utility.
+Output: **combined_data_final.xlsx**
 
+---
 
-### Planned Improvements
-- [ ] Enhance LLM output validation and error handling
-- [ ] Implementation of a LLM-as-a-Judge review system for quality control
-- [ ] Development of a dynamic highlighting system based on skill ratings
-- [ ] Integration of student engagement metrics for intervention optimization
-- [ ] Identify certain skill dependencies
+## 🧪 Human Review & Quality Control
+
+### 🧷 Feedback-Informed Few-Shot Learning
+- Create a reference dataset with human-reviewed examples.
+- Use these examples as few-shot prompts to guide and improve LLM output quality.
+
+### 🔍 Evaluation with Human Ratings
+- Randomly sample and review LLM-generated outputs.
+- Human raters evaluate skill alignment, clarity, and pedagogical value.
+
+### 🧠 Prompt Optimization & Edge Case Analysis
+- Compare human and model ratings to fine-tune prompts.
+- Identify skill categories or content formats where the model underperforms.
+
+### 🤖 LLM-as-a-Judge for Scalable Review
+- Fine-tune a model to serve as a proxy reviewer.
+- Helps reduce reliance on manual reviews for future outputs.
+
+### 🧪 Lightweight A/B Testing
+- Run controlled comparisons of LLM-generated interventions.
+- Use engagement or comprehension metrics to assess effectiveness.
+
+---
+
+## 📈 Planned Improvements
+
+- [ ] Improve LLM output validation and error handling  
+- [ ] Implement a scalable **LLM-as-a-Judge** system for reviews  
+- [ ] Add dynamic **text highlighting** based on skill strength  
+- [ ] Integrate **student engagement metrics** for optimization  
+- [ ] Visualize and track **skill dependencies** across stories  
