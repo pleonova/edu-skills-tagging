@@ -3,6 +3,9 @@
 ## Overview
 This app analyzes educational text passages to identify optimal learning intervention points by mapping text content to specific educational skills and competencies. The system employs Large Language Models (LLMs) to perform intelligent skill mapping and rating.
 
+## User Interface
+![User Interface Mock](diagrams/user_interface_mock.jpg)
+
 ## System Design and Methodology
 
 ### Key Design Choices
