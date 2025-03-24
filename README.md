@@ -47,7 +47,8 @@ The system determines suitable learning intervention moments by:
 ### Instructions for how to run the code
 - Make sure that you have sign up for groq and gotten a free API key 
 - Create a virtual environment using the requirements.txt
-- run files run_01.. and then run_02
+- run file run_01_process_stories.py
+- run file run_02_combine_data.py to get the final AI output file `combined_data_final.xlsx'
 
 
 ### Human Review Integration & Quality Control
