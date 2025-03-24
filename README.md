@@ -1,12 +1,12 @@
 # 📚 Educational Intervention Skill Tagging
 
-## 🚀 Overview
+## Overview
 
 This application analyzes educational text passages to identify optimal intervention points by mapping content to specific academic skills. It uses large language models (LLMs) to intelligently detect, rate, and explain skill alignment—helping educators personalize instruction and improve learning outcomes.
 
 ---
 
-## 🖼️ User Interface
+## User Interface
 
 ![User Interface Mock](diagrams/user_interface_mock.jpg)
 
