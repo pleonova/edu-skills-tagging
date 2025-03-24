@@ -64,19 +64,25 @@ The system pinpoints passages that:
 ### ▶️ How to Run
 
 1. Sign up at [Groq](https://groq.com) and obtain a free API key.
-2. Set up the virtual environment:
+
+2. Set up your environment variable:
+   ```bash
+   export GROQ_API_KEY='your-api-key-here'
+   ```
+   
+3. Set up the virtual environment:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the story processing script:
+4. Run the story processing script:
 
    ```bash
    python run_01_process_stories.py
    ```
 
-4. Generate the final AI output:
+5. Generate the final AI output:
 
    ```bash
    python run_02_combine_data.py
