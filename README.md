@@ -10,6 +10,7 @@ This application analyzes educational text passages to identify optimal interven
 
 ![User Interface Mock](diagrams/ui_mock.jpg)
 
+See full output here: **[output/combined_data_final.xlsx](output/combined_data_final.xlsx)**
 ---
 
 ## 🧠 System Design & Methodology
