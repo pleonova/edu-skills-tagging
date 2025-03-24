@@ -54,7 +54,7 @@ The system pinpoints passages that:
 ## 🛠️ Technical Implementation
 
 - Python-based processing pipeline
-- Structured prompt engineering
+- Structured prompt engineering - JSON Output
 - LLM output stored and analyzed using **DataFrames**
 - Embedding-based dataset joins to reduce hallucinations
 - Final output: Excel reports for easy review & collaboration
