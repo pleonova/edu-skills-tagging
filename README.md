@@ -116,7 +116,7 @@ The final outputs will be available in the `output/` directory:
 - **combined_data_final.xlsx**: Main output with skill alignments
 - **discussion_questions.xlsx**: Secondary output with associated questions for skill discussion
 
-#### 🤖 LLM Service Implementation
+## 🤖 LLM Service Implementation
 
 The `llm_service.py` file provides a robust implementation for processing educational content using the Groq LLM API. Here's a detailed breakdown of its functionality:
 
@@ -140,7 +140,7 @@ The `llm_service.py` file provides a robust implementation for processing educat
        ]
      }
      ```
-     Skills Result Sample Output:
+     Sample Output:
      ```json
      {
        "skills": [
@@ -163,7 +163,7 @@ The `llm_service.py` file provides a robust implementation for processing educat
        }
      ]
      ```
-     Discussion Questions Sample Output:
+     Sample Output:
      ```json
      {
        "questions": [
@@ -193,7 +193,8 @@ The `llm_service.py` file provides a robust implementation for processing educat
    - **Debugging**: Supports debugging through message printing
 
 4. **Sample Usage**:
-   ```python llm_service.py
+   ```json
+   python llm_service.py
    ```
 
 To see a sample output for one story, checkout the `output/sample_prompt_chain.txt` file, which demonstrates the full processing pipeline from story analysis to question generation.
@@ -202,7 +203,7 @@ To see a sample output for one story, checkout the `output/sample_prompt_chain.t
 
 ---
 
-## 🧪 Human Review & Quality Control
+## 🧪 Planned Human Review & Quality Control
 
 ### 🧷 Feedback-Informed Few-Shot Learning
 - Create a reference dataset with human-reviewed examples.
