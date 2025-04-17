@@ -1,0 +1,461 @@
+################################################################################
+Generating skills from story...
+################################################################################
+
+
+=== Messages being sent to the model ===
+
+Message 1 (system):
+--------------------------------------------------------------------------------
+You are a helpful teacher that knows how to help students learn. You return answers in JSON format.
+--------------------------------------------------------------------------------
+
+Message 2 (user):
+--------------------------------------------------------------------------------
+
+Skills:
+- Understands that language can be used to communicate.
+- Knows about measurement.
+- Knows about math patterns.
+- Knows about money.
+- Knows about plant adaptations and traits. 
+- Knows about the plant life cycle.
+- Knows about animal classification.
+- Knows about animal habitats.
+- Knows about animal adaptations.
+- Knows about the animal life cycle.
+- Knows about animal behaviors and diets. 
+- Knows about animal anatomy and characteristics.
+- Knows about human body systems.
+- Knows about the five senses.
+- Knows about human behaviors. 
+- Knows about human families and basic human needs. 
+- Knows about environment.
+- Knows about ecosystem interactions.
+- Knows about living vs. non-living organisms
+- Knows about properties of matter.
+- Knows about force and motion.
+- Knows about gravity.
+- Knows about thermal energy.
+- Knows about electrical energy.
+- Knows about light energy.
+- Knows about sound energy.
+- Knows about the solar system.
+- Knows about the sun.
+- Knows about weather and climate.
+- Understands how the movement of earth's systems impacts humans. 
+- Knows about conservation. 
+- Knows about landforms
+- Knows about renewable resources. 
+- Knows about nonrenewable resources.
+- Knows about community roles and responsibilities. 
+- Knows about transportation.
+- Knows about shared spaces in a community.
+- Knows about language and communication used within a community
+- Knows about structures and architecture.
+- Knows about farm and ranch life.
+- Knows about holidays.
+- Knows about historical figures. 
+- Knows about stories and folktales.
+- Knows about culture and traditions.
+- Knows about rules and laws.
+- "Knows about leadership, elections, and voting."
+- Knows about rights and freedoms. 
+- Knows about inventions and discoveries.
+- Knows about space exploration and technology.
+- Knows about communication technology.
+- Knows about early civilizations.
+- Knows about wars and battles
+- Knows about local and state history. 
+- Knows about colonial America.
+- Knows about the American Revolution. 
+- Knows about Modern America.
+- Knows about physical geography.
+- Knows about landforms. 
+- Knows about regions.
+- Knows about drawing and illustration.
+- Knows about painting.
+- Knows about art history.
+- Knows about drama.
+- Knows about physical activity.
+- Knows about mental and emotional health.
+- Knows about internet basics.
+- Knows about digital responsibility.
+- Knows about media literacy.
+
+Story:
+Some days, Dad and I go in the car. Dad drives. I ride. Some days, Dad and I go on the train. I ride. But Dad does not drive the train. Dad rides too. The family is going on a vacation. Can they take the car? No, the car is too small. Can they take the train? Yes, it is just right. All of the family can go on the vacation.
+
+Only return the relevant Skills from the list above.
+Make sure to provide a clear explanation why the rating was 9-10 perfect, why parts of it are not well aligned 5-6, or it is very bad alignment 3 or less.
+The same excerpt could have multiple skills and different ratings, separate those out.
+The JSON schema should include:
+{
+"skill": "skill description", 
+"explanation": "why it is aligned", 
+"story_excerpt": "where in the story to stop to review this skill",
+"rating": 0-10
+}
+--------------------------------------------------------------------------------
+
+================================================================================
+
+Skills Result:
+{
+  "skills": [
+    {
+      "skill": "Knows about transportation",
+      "explanation": "The story mentions going in a car and on a train, showing an understanding of different modes of transportation.",
+      "story_excerpt": "Some days, Dad and I go in the car. Dad drives. I ride. Some days, Dad and I go on the train.",
+      "rating": 10
+    },
+    {
+      "skill": "Knows about community roles and responsibilities",
+      "explanation": "The story implies that Dad has a role in driving the car and riding the train, showing an understanding of community roles.",
+      "story_excerpt": "Dad drives. I ride.",
+      "rating": 8
+    },
+    {
+      "skill": "Knows about language and communication used within a community",
+      "explanation": "The story uses simple language to communicate a message about transportation, showing an understanding of language and communication.",
+      "story_excerpt": "Some days, Dad and I go in the car.",
+      "rating": 9
+    }
+  ]
+}
+
+
+
+
+################################################################################
+Generating discussion questions for high-rated skills (rating > 8)...
+################################################################################
+
+
+Generating questions for skill: Knows about transportation (Rating: 10)
+
+=== Messages being sent to the model ===
+
+Message 1 (system):
+--------------------------------------------------------------------------------
+You are a helpful teacher that knows how to create effective discussion questions for students. Return the response in JSON format.
+--------------------------------------------------------------------------------
+
+Message 2 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: The Lincoln Memorial stands as a testament to American history and values. Designed by architect Henry Bacon, this neoclassical monument honors the 16th President of the United States, Abraham Lincoln. The memorial was part of the McMillan Plan, which expanded upon L'Enfant's original vision for Washington, D.C. When completed in 1922, it quickly became one of the most visited sites in the nation's capital. Its purpose was to commemorate Lincoln's leadership during the Civil War and his commitment to preserving the Union. The memorial, with its 36 columns representing the states at the time of Lincoln's presidency, creates a solemn and reflective atmosphere for visitors. The McMillan Commission's vision transformed the National Mall into what we see today. Washington, D.C. has evolved into a city of monuments and memorials that tell America's story. The commission's urban planning concepts have influenced city development across the country. The thoughtful design of public spaces continues to be studied and appreciated worldwide. Urban planning teaches us that well-designed public spaces can strengthen community bonds. Just as the McMillan Commission carefully considered the placement of monuments and open spaces, we can think about how our own communities are designed. Are there gathering places where people can come together? Do we have spaces that honor our shared history? These elements of urban design can make our neighborhoods more connected and meaningful. So, remember the McMillan Commission, whose expanded vision helped create the iconic National Mall we know today. Their work shows us that thoughtful planning can create spaces that inspire and unite communities for generations. Perhaps someday you'll help design spaces that bring people together in your own community!
+Story Excerpt: The Lincoln Memorial stands as a testament to American history and values.
+Skill Description: Knows about historical figures
+Explanation: The story mentions Abraham Lincoln, the 16th President of the United States, which aligns perfectly with this skill.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+Message 3 (assistant):
+--------------------------------------------------------------------------------
+[
+  {
+    "question": "Why is the president of the US important?",
+    "type": "Comprehension",
+    "instructional_purpose": "Assess whether the student knows about the president and what they do."
+  },
+  {
+    "question": "Why might there be a Memorial for someone?",
+    "type": "Comprehension",
+    "instructional_purpose": "Assess whether the student knows what a memorial is."
+  },
+  {
+    "question": "What do you think the carved speeches are about?",
+    "type": "Application",
+    "instructional_purpose": "Requires the student to know what the president does or know about the time period when Abraham Lincoln was a president."
+  }
+]
+--------------------------------------------------------------------------------
+
+Message 4 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: Venus, often called Earth's sister planet, has some fascinating characteristics. It rotates on its axis very slowly, with one day on Venus lasting about 243 Earth days - much longer than Earth's 24-hour day. Interestingly, Venus rotates in the opposite direction compared to most planets. A year on Venus, the time it takes to orbit the sun, is shorter than its day, lasting about 225 Earth days. Unlike Mars and Earth, Venus doesn't have distinct seasons because its axis has very little tilt. Venus is extremely hot, with temperatures that can melt lead. Its thick atmosphere traps heat, creating a runaway greenhouse effect. Scientists study Venus using special spacecraft that can withstand its harsh conditions. These missions help us understand the planet's volcanic activity and its unusual atmosphere. By exploring Venus, researchers hope to learn more about climate change and planetary evolution. Venus remains a captivating world that helps us appreciate the diversity of planets in our solar system!
+Story Excerpt: Venus, often called Earth's sister planet, has some fascinating characteristics.
+Skill Description: Knows about the solar system
+Explanation: The story explicitly mentions Venus as a planet in our solar system, demonstrating a clear connection to this skill.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+Message 5 (assistant):
+--------------------------------------------------------------------------------
+[
+  {
+    "question": "What is a planet?",
+    "type": "Recall",
+    "instructional_purpose": "Assess whether the student understands the concept of planets."
+  },
+  {
+    "question": "How is Venus different from Earth?",
+    "type": "Recall",
+    "instructional_purpose": "Assess if the student can compare planets, which was demonstrated in the story."
+  },
+  {
+    "question": "Why might scientists be interested in studying Venus?",
+    "type": "Application",
+    "instructional_purpose": "Requires the student to apply scientific thinking about planetary exploration."
+  }
+]
+--------------------------------------------------------------------------------
+
+Message 6 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: Hello! I'm Zoe Maria Chen, but everyone just calls me Zoe. I'm eight years old. I live with Mom, Papa, and my older brother, Leo. Uncle and auntie live in our apartment complex, too. My two closest friends, Tiana and Jackson, also live here. My family and I used to live in a big house in the suburbs. Now we live in a city with busy streets and many shops. Join me on my exciting city adventures! "Can I help make dinner tonight?" Zoe asked Mom one Sunday evening. Zoe and her family lived in an apartment building. They had a small kitchen, not like their old house's spacious one. Everyone had to take turns using the kitchen counter space. "Of course," Mom answered. "We'll add cooking to your responsibility chart. Papa can help Leo with his homework. He has a math test tomorrow." "That works for me," Papa said. He sat down with Leo at the dining table. "Now I have three responsibilities," Zoe said. "Feeding our cat Milo, watering the plants, and helping with dinner." Zoe helped Mom gather ingredients from the refrigerator. She washed her hands at the sink. In the kitchen, Mom divided the vegetables into groups. "Chop each vegetable into small pieces," she instructed Zoe. "Each dish needs different sized pieces." "I understand!" Zoe replied.
+Story Excerpt: Mom divided the vegetables into groups. "Chop each vegetable into small pieces," she instructed Zoe.
+Skill Description: Knows about measurement
+Explanation: The story mentions dividing vegetables into groups and chopping them into small pieces, which involves measurement skills.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+Message 7 (assistant):
+--------------------------------------------------------------------------------
+[
+  {
+    "question": "What does it mean to measure something?",
+    "type": "Comprehension",
+    "instructional_purpose": "Assess whether the student knows what measurement is."
+  },
+  {
+    "question": "How did the child use measurement in the story?",
+    "type": "Recall",
+    "instructional_purpose": "Assess comprehension of how measurement was applied, which was demonstrated in the story."
+  },
+  {
+    "question": "Can you think of other places we use measurement in everyday life?",
+    "type": "Application",
+    "instructional_purpose": "Requires the student to transfer the concept to real-life situations."
+  }
+]
+--------------------------------------------------------------------------------
+
+Message 8 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: Some days, Dad and I go in the car. Dad drives. I ride. Some days, Dad and I go on the train. I ride. But Dad does not drive the train. Dad rides too. The family is going on a vacation. Can they take the car? No, the car is too small. Can they take the train? Yes, it is just right. All of the family can go on the vacation.
+Story Excerpt: Some days, Dad and I go in the car. Dad drives. I ride. Some days, Dad and I go on the train.
+Skill Description: Knows about transportation
+Explanation: The story mentions going in a car and on a train, showing an understanding of different modes of transportation.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+================================================================================
+
+Discussion Questions:
+{
+  "questions": [
+    {
+      "question": "What are two ways the family travels?",
+      "type": "Recall",
+      "instructional_purpose": "Assess whether the student can recall the modes of transportation mentioned in the story."
+    },
+    {
+      "question": "Why did the family choose to take the train for their vacation?",
+      "type": "Comprehension",
+      "instructional_purpose": "Assess whether the student understands the reason behind the family's transportation choice."
+    },
+    {
+      "question": "What other ways can people travel besides cars and trains?",
+      "type": "Application",
+      "instructional_purpose": "Requires the student to think about other modes of transportation beyond what was mentioned in the story."
+    }
+  ]
+}
+
+Skipping skill: Knows about community roles and responsibilities (Rating: 8)
+
+Generating questions for skill: Knows about language and communication used within a community (Rating: 9)
+
+=== Messages being sent to the model ===
+
+Message 1 (system):
+--------------------------------------------------------------------------------
+You are a helpful teacher that knows how to create effective discussion questions for students. Return the response in JSON format.
+--------------------------------------------------------------------------------
+
+Message 2 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: The Lincoln Memorial stands as a testament to American history and values. Designed by architect Henry Bacon, this neoclassical monument honors the 16th President of the United States, Abraham Lincoln. The memorial was part of the McMillan Plan, which expanded upon L'Enfant's original vision for Washington, D.C. When completed in 1922, it quickly became one of the most visited sites in the nation's capital. Its purpose was to commemorate Lincoln's leadership during the Civil War and his commitment to preserving the Union. The memorial, with its 36 columns representing the states at the time of Lincoln's presidency, creates a solemn and reflective atmosphere for visitors. The McMillan Commission's vision transformed the National Mall into what we see today. Washington, D.C. has evolved into a city of monuments and memorials that tell America's story. The commission's urban planning concepts have influenced city development across the country. The thoughtful design of public spaces continues to be studied and appreciated worldwide. Urban planning teaches us that well-designed public spaces can strengthen community bonds. Just as the McMillan Commission carefully considered the placement of monuments and open spaces, we can think about how our own communities are designed. Are there gathering places where people can come together? Do we have spaces that honor our shared history? These elements of urban design can make our neighborhoods more connected and meaningful. So, remember the McMillan Commission, whose expanded vision helped create the iconic National Mall we know today. Their work shows us that thoughtful planning can create spaces that inspire and unite communities for generations. Perhaps someday you'll help design spaces that bring people together in your own community!
+Story Excerpt: The Lincoln Memorial stands as a testament to American history and values.
+Skill Description: Knows about historical figures
+Explanation: The story mentions Abraham Lincoln, the 16th President of the United States, which aligns perfectly with this skill.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+Message 3 (assistant):
+--------------------------------------------------------------------------------
+[
+  {
+    "question": "Why is the president of the US important?",
+    "type": "Comprehension",
+    "instructional_purpose": "Assess whether the student knows about the president and what they do."
+  },
+  {
+    "question": "Why might there be a Memorial for someone?",
+    "type": "Comprehension",
+    "instructional_purpose": "Assess whether the student knows what a memorial is."
+  },
+  {
+    "question": "What do you think the carved speeches are about?",
+    "type": "Application",
+    "instructional_purpose": "Requires the student to know what the president does or know about the time period when Abraham Lincoln was a president."
+  }
+]
+--------------------------------------------------------------------------------
+
+Message 4 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: Venus, often called Earth's sister planet, has some fascinating characteristics. It rotates on its axis very slowly, with one day on Venus lasting about 243 Earth days - much longer than Earth's 24-hour day. Interestingly, Venus rotates in the opposite direction compared to most planets. A year on Venus, the time it takes to orbit the sun, is shorter than its day, lasting about 225 Earth days. Unlike Mars and Earth, Venus doesn't have distinct seasons because its axis has very little tilt. Venus is extremely hot, with temperatures that can melt lead. Its thick atmosphere traps heat, creating a runaway greenhouse effect. Scientists study Venus using special spacecraft that can withstand its harsh conditions. These missions help us understand the planet's volcanic activity and its unusual atmosphere. By exploring Venus, researchers hope to learn more about climate change and planetary evolution. Venus remains a captivating world that helps us appreciate the diversity of planets in our solar system!
+Story Excerpt: Venus, often called Earth's sister planet, has some fascinating characteristics.
+Skill Description: Knows about the solar system
+Explanation: The story explicitly mentions Venus as a planet in our solar system, demonstrating a clear connection to this skill.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+Message 5 (assistant):
+--------------------------------------------------------------------------------
+[
+  {
+    "question": "What is a planet?",
+    "type": "Recall",
+    "instructional_purpose": "Assess whether the student understands the concept of planets."
+  },
+  {
+    "question": "How is Venus different from Earth?",
+    "type": "Recall",
+    "instructional_purpose": "Assess if the student can compare planets, which was demonstrated in the story."
+  },
+  {
+    "question": "Why might scientists be interested in studying Venus?",
+    "type": "Application",
+    "instructional_purpose": "Requires the student to apply scientific thinking about planetary exploration."
+  }
+]
+--------------------------------------------------------------------------------
+
+Message 6 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: Hello! I'm Zoe Maria Chen, but everyone just calls me Zoe. I'm eight years old. I live with Mom, Papa, and my older brother, Leo. Uncle and auntie live in our apartment complex, too. My two closest friends, Tiana and Jackson, also live here. My family and I used to live in a big house in the suburbs. Now we live in a city with busy streets and many shops. Join me on my exciting city adventures! "Can I help make dinner tonight?" Zoe asked Mom one Sunday evening. Zoe and her family lived in an apartment building. They had a small kitchen, not like their old house's spacious one. Everyone had to take turns using the kitchen counter space. "Of course," Mom answered. "We'll add cooking to your responsibility chart. Papa can help Leo with his homework. He has a math test tomorrow." "That works for me," Papa said. He sat down with Leo at the dining table. "Now I have three responsibilities," Zoe said. "Feeding our cat Milo, watering the plants, and helping with dinner." Zoe helped Mom gather ingredients from the refrigerator. She washed her hands at the sink. In the kitchen, Mom divided the vegetables into groups. "Chop each vegetable into small pieces," she instructed Zoe. "Each dish needs different sized pieces." "I understand!" Zoe replied.
+Story Excerpt: Mom divided the vegetables into groups. "Chop each vegetable into small pieces," she instructed Zoe.
+Skill Description: Knows about measurement
+Explanation: The story mentions dividing vegetables into groups and chopping them into small pieces, which involves measurement skills.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+Message 7 (assistant):
+--------------------------------------------------------------------------------
+[
+  {
+    "question": "What does it mean to measure something?",
+    "type": "Comprehension",
+    "instructional_purpose": "Assess whether the student knows what measurement is."
+  },
+  {
+    "question": "How did the child use measurement in the story?",
+    "type": "Recall",
+    "instructional_purpose": "Assess comprehension of how measurement was applied, which was demonstrated in the story."
+  },
+  {
+    "question": "Can you think of other places we use measurement in everyday life?",
+    "type": "Application",
+    "instructional_purpose": "Requires the student to transfer the concept to real-life situations."
+  }
+]
+--------------------------------------------------------------------------------
+
+Message 8 (user):
+--------------------------------------------------------------------------------
+Given the following story, skill description, and explanation, please provide 3 discussion questions that would be appropriate to assess the skill.
+Story: Some days, Dad and I go in the car. Dad drives. I ride. Some days, Dad and I go on the train. I ride. But Dad does not drive the train. Dad rides too. The family is going on a vacation. Can they take the car? No, the car is too small. Can they take the train? Yes, it is just right. All of the family can go on the vacation.
+Story Excerpt: Some days, Dad and I go in the car.
+Skill Description: Knows about language and communication used within a community
+Explanation: The story uses simple language to communicate a message about transportation, showing an understanding of language and communication.
+
+The questions should:
+1. Assess different levels of understanding (Recall, Comprehension, Application)
+2. Be clear and age-appropriate
+3. Have a clear instructional purpose
+4. Be directly related to the story content
+5. Be directly related to the skill description
+
+--------------------------------------------------------------------------------
+
+================================================================================
+
+Discussion Questions:
+{
+  "questions": [
+    {
+      "question": "What is the main idea of the story?",
+      "type": "Recall",
+      "instructional_purpose": "Assess whether the student can identify the central message of the story."
+    },
+    {
+      "question": "How does the author use language to compare the car and the train?",
+      "type": "Comprehension",
+      "instructional_purpose": "Assess whether the student can analyze the author's language choices."
+    },
+    {
+      "question": "How do people in your community use language to communicate about transportation?",
+      "type": "Application",
+      "instructional_purpose": "Requires the student to apply understanding of language and communication to real-life situations."
+    }
+  ]
+}
