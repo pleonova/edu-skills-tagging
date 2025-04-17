@@ -18,7 +18,7 @@ See full output here: **[output/combined_data_final.xlsx](output/combined_data_f
 
 ### 🧩 1. Skill-Based Analysis Framework
 
-- Uses a comprehensive taxonomy of **69 educational competencies**
+- Uses a comprehensive taxonomy of **69 educational competencies** from [`input/skills.csv`](input/skills.csv)
 - Skills span a wide range of domains:
   - **Science** (e.g., life sciences, physics, earth science)
   - **Social Studies** (e.g., history, geography, civics)
@@ -31,7 +31,7 @@ See full output here: **[output/combined_data_final.xlsx](output/combined_data_f
 
 ### 🤖 2. AI-Powered Skill Assessment
 
-- Powered by **Groq LLM API (llama3-70b-8192)**
+- Powered by **Groq LLM API (llama3-70b-8192)** through [`llm_service.py`](llm_service.py)
 - Uses structured prompt templates to ensure consistency
 - **Low temperature (0.01)** for deterministic, repeatable outputs
 
@@ -65,7 +65,7 @@ The system generates targeted discussion points that:
 
 - Python-based processing pipeline
 - Structured prompt engineering - JSON Output
-- Various Pompt Techniques (RAG, Few-Shot, Tooling, Chaining)
+- Various Pompt Techniques (Few-Shot Learning, Tooling, Chaining)
 - LLM output stored and analyzed using DataFrames
 - Embedding-based dataset joins to reduce hallucinations
 - Final output: Excel reports for easy review & collaboration
@@ -98,33 +98,33 @@ The system generates targeted discussion points that:
    ```bash
    python run_01_align_skills_to_stories.py
    ```
-   This will process the stories and generate skill alignments.
+   This will process the stories from [`input/stories.csv`](input/stories.csv) and generate skill alignments.
 
 5. Combine the data:
    ```bash
    python run_02_combine_data.py
    ```
-   This will generate the final combined output.
+   This will generate the final combined output in [`output/combined_data_final.xlsx`](output/combined_data_final.xlsx).
 
 6. (Optional) Generate discussion questions:
    ```bash
    python run_03_generate_discussion_questions.py
    ```
-   This will create additional discussion questions based on the aligned skills.
+   This will create additional discussion questions in [`output/discussion_questions.xlsx`](output/discussion_questions.xlsx).
 
 The final outputs will be available in the `output/` directory:
-- **combined_data_final.xlsx**: Main output with skill alignments
-- **discussion_questions.xlsx**: Secondary output with associated questions for skill discussion
+- **[combined_data_final.xlsx](output/combined_data_final.xlsx)**: Main output with skill alignments
+- **[discussion_questions.xlsx](output/discussion_questions.xlsx)**: Secondary output with associated questions for skill discussion
 
 ## 🤖 LLM Service Implementation
 
-The `llm_service.py` file provides a robust implementation for processing educational content using the Groq LLM API. Here's a detailed breakdown of its functionality:
+The [`llm_service.py`](llm_service.py) file provides a robust implementation for processing educational content using the Groq LLM API. Here's a detailed breakdown of its functionality:
 
 1. **Key Prompt Components**:
-   - **Skills Augmented Analysis**: Analyzes text passages to identify and rate educational skills
-   - **Discussion Generation**: Creates targeted questions based on identified skills
+   - **Skills Augmented Analysis**: Analyzes text passages to identify and rate educational skills 
+   - **Discussion Question Generation**: Creates targeted questions based on identified skills
+   - **Few-Shot Learning**: Uses example-based prompting from [`examples/few_shot_examples_discussion_questions.json`](examples/few_shot_examples_discussion_questions.json)
    - **Custom Tooling**: Supports GPT-4 function calling for structured outputs
-   - **Few-Shot Learning**: Uses example-based prompting for better results
 
 2. **Output Structure & Sample Output**:
    - **Skills Analysis Output Structure**:
@@ -193,32 +193,26 @@ The `llm_service.py` file provides a robust implementation for processing educat
    - **Debugging**: Supports debugging through message printing
 
 4. **Sample Usage**:
-   ```json
+   ```bash
    python llm_service.py
    ```
 
-To see a sample output for one story, checkout the `output/sample_prompt_chain.txt` file, which demonstrates the full processing pipeline from story analysis to question generation.
-
-
+To see a sample output for one story, checkout the [`output/sample_prompt_chain.txt`](output/sample_prompt_chain.txt) file, which demonstrates the full processing pipeline from story analysis to question generation.
 
 ---
 
 ## 🧪 Planned Human Review & Quality Control
-
-### 🧷 Feedback-Informed Few-Shot Learning
-- Create a reference dataset with human-reviewed examples.
-- Use these examples as few-shot prompts to guide and improve LLM output quality.
 
 ### 🔍 Evaluation with Human Ratings
 - Randomly sample and review LLM-generated outputs.
 - Human raters evaluate skill alignment, clarity, and pedagogical value.
 
 ### 🧠 Prompt Optimization & Edge Case Analysis
-- Compare human and model ratings to fine-tune prompts.
+- Compare human and model ratings to better engineer prompts.
 - Identify skill categories or content formats where the model underperforms.
 
 ### 🤖 LLM-as-a-Judge for Scalable Review
-- Fine-tune a model to serve as a proxy reviewer.
+- Use a separate model with a prompt that mimics human evaluation behavior to assess content.
 - Helps reduce reliance on manual reviews for future outputs.
 
 ### 🧪 Lightweight A/B Testing
@@ -234,4 +228,4 @@ To see a sample output for one story, checkout the `output/sample_prompt_chain.t
 - [x] Add another prompt for skills assessment
 - [ ] Add dynamic **text highlighting** based on skill strength  
 - [ ] Integrate **student engagement metrics** for optimization  
-- [ ] Visualize and track **skill dependencies** across stories  
+- [ ] Visualize and track **skill dependencies** across stories
